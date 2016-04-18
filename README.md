@@ -48,7 +48,7 @@ A curated set of logos for various UC Irvine departments are included. Vector gr
 
 [**Awesome CV**](https://github.com/posquit0/Awesome-CV) is a CV/Cover letter template from which these files are derived.
 
-[UMBCPoster](http://userpages.umbc.edu/~rostamia/umbcposter/) is a poster template for easily creating posters.
+[**UMBCPoster**](http://userpages.umbc.edu/~rostamia/umbcposter/) is a poster template for easily creating posters.
 
 ## Contact
 
