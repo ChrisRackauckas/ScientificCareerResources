@@ -22,7 +22,7 @@ The cover letter is also based off of [**Awesome CV**](https://github.com/posqui
 
 ## Business Cards
 
-A business card template was created to match the headers for the CV and cover letter. It matches standard US size 3.5in x 2in business cards. It utilizes the vector graphic logos included in a different part of the repository. An example is included as [card.pdf](https://github.com/ChrisRackauckas/ScientificCareerResources/blob/master/ProfessionalTools/card.pdf). I have used the templates with [Overnight Prints](http://www.overnightprints.com/) and with [Staples Copy and Print](http://www.staples.com/sbd/content/copyandprint/)(for making pens as well) with success.
+A business card template was created to match the headers for the CV and cover letter. It matches standard US size 3.5in x 2in business cards. It utilizes the vector graphic logos included in a different part of the repository. An example is included as [card.pdf](https://github.com/ChrisRackauckas/ScientificCareerResources/blob/master/ProfessionalTools/card.pdf). I have used the templates with [Overnight Prints](http://www.overnightprints.com/) and with [Staples Copy and Print](http://www.staples.com/sbd/content/copyandprint/) (for making pens as well) with success.
 
 ## Poster
 
