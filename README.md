@@ -34,7 +34,7 @@ A presentation example using Beamer with Lyx is included. This example shows how
 
 ## Logos
 
-A curated set of logos for various UC Irvine departments are included. Vector graphics (including Illustrator .ai files), PDFs, and high quality PNGs are included. Also included are .ai files to re-create the [Center for Complex Biological Systems Logo](http://ccbs.uci.edu/) and associated vector graphics.
+A curated set of logos for various UC Irvine departments are included. Vector graphics (including Illustrator .ai files), PDFs, and high quality PNGs are included. Also included are .ai files to re-create the [Center for Complex Biological Systems](http://ccbs.uci.edu/) and associated vector graphics.
 
 ## Credit
 
