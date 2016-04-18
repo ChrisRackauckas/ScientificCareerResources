@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="944"
+   height="436"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     transform="translate(243.28572,-144.79076)"
+     id="layer1">
+    <rect
+       width="300"
+       height="81"
+       x="56.714279"
+       y="146.79076"
+       style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2287" />
+    <text
+       x="206.62967"
+       y="182.34464"
+       style="font-size:26.65712357px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3259"
+       xml:space="preserve"><tspan
+         x="206.62967"
+         y="182.34464"
+         id="tspan3261">OpenMP language</tspan></text>
+    <text
+       x="206.74031"
+       y="211.34464"
+       style="font-size:26.65712357px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3263"
+       xml:space="preserve"><tspan
+         x="206.74031"
+         y="211.34464"
+         id="tspan3265">extensions</tspan></text>
+    <g
+       id="g3604">
+      <rect
+         width="158"
+         height="89"
+         x="-240.28572"
+         y="311.79077"
+         style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect3277" />
+      <text
+         x="-161.23624"
+         y="351.42581"
+         style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+         id="text3279"
+         xml:space="preserve"><tspan
+           x="-161.23624"
+           y="351.42581"
+           id="tspan3281">parallel control</tspan></text>
+      <text
+         x="-161.20654"
+         y="375.42581"
+         style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+         id="text3283"
+         xml:space="preserve"><tspan
+           x="-161.20654"
+           y="375.42581"
+           id="tspan3285">structures</tspan></text>
+    </g>
+    <g
+       id="g3611">
+      <rect
+         width="158"
+         height="89"
+         x="-56.285721"
+         y="311.79077"
+         style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect3303" />
+      <text
+         x="22.763763"
+         y="363.42581"
+         style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+         id="text3305"
+         xml:space="preserve"><tspan
+           x="22.763762"
+           y="363.42581"
+           id="tspan3307">work sharing</tspan></text>
+    </g>
+    <g
+       transform="translate(-2,0)"
+       id="g3616">
+      <rect
+         width="158"
+         height="89"
+         x="129.71428"
+         y="311.79077"
+         style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect3313" />
+      <text
+         x="208.76376"
+         y="351.42581"
+         style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+         id="text3315"
+         xml:space="preserve"><tspan
+           x="208.76376"
+           y="351.42581"
+           id="tspan3317">data</tspan></text>
+      <text
+         x="208.79346"
+         y="375.42581"
+         style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+         id="text3319"
+         xml:space="preserve"><tspan
+           x="208.79346"
+           y="375.42581"
+           id="tspan3321">environment</tspan></text>
+    </g>
+    <g
+       transform="translate(-1,0)"
+       id="g3623">
+      <rect
+         width="158"
+         height="89"
+         x="312.71429"
+         y="311.79077"
+         style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect3323" />
+      <text
+         x="392.10519"
+         y="363.42581"
+         style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+         id="text3325"
+         xml:space="preserve"><tspan
+           x="392.10519"
+           y="363.42581"
+           id="tspan3327">synchronization</tspan></text>
+    </g>
+    <g
+       transform="translate(-1.0000144,0)"
+       id="g3628">
+      <rect
+         width="158"
+         height="89"
+         x="496.71429"
+         y="311.79077"
+         style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect3329" />
+      <g
+         transform="translate(0,-11.999989)"
+         id="g3363">
+        <text
+           x="575.48175"
+           y="351.42581"
+           style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+           id="text3331"
+           xml:space="preserve"><tspan
+             x="575.48175"
+             y="351.42581"
+             id="tspan3333">runtime</tspan></text>
+        <text
+           x="576.49609"
+           y="375.42581"
+           style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+           id="text3335"
+           xml:space="preserve"><tspan
+             x="576.49609"
+             y="375.42581"
+             id="tspan3337">functions, env.</tspan></text>
+        <text
+           x="575.97656"
+           y="399.42581"
+           style="font-size:20.26710892px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+           id="text3351"
+           xml:space="preserve"><tspan
+             x="575.97656"
+             y="399.42581"
+             id="tspan3353">variables</tspan></text>
+      </g>
+    </g>
+    <rect
+       width="158"
+       height="146"
+       x="-241.28572"
+       y="432.79077"
+       style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3371" />
+    <text
+       x="-230.10219"
+       y="461.39749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3373"
+       xml:space="preserve"><tspan
+         x="-230.10219"
+         y="461.39749"
+         id="tspan3375">governs flow of</tspan></text>
+    <text
+       x="-230.10219"
+       y="478.89749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3377"
+       xml:space="preserve"><tspan
+         x="-230.10219"
+         y="478.89749"
+         id="tspan3379">control in the</tspan></text>
+    <text
+       x="-230.10219"
+       y="496.39749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3381"
+       xml:space="preserve"><tspan
+         x="-230.10219"
+         y="496.39749"
+         id="tspan3383">program</tspan></text>
+    <text
+       x="-230.10219"
+       y="553.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3385"
+       xml:space="preserve"><tspan
+         x="-230.10219"
+         y="553.39746"
+         id="tspan3387"><tspan
+   style="font-weight:bold;fill:#800000;font-family:Courier New"
+   id="tspan3389">parallel</tspan> directive</tspan></text>
+    <rect
+       width="158"
+       height="146"
+       x="-56.285721"
+       y="432.79077"
+       style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3395" />
+    <text
+       x="-45.102188"
+       y="461.39749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3397"
+       xml:space="preserve"><tspan
+         x="-45.102188"
+         y="461.39749"
+         id="tspan3399">distributes work</tspan></text>
+    <text
+       x="-45.102188"
+       y="478.89749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3401"
+       xml:space="preserve"><tspan
+         x="-45.102188"
+         y="478.89749"
+         id="tspan3403">among threads</tspan></text>
+    <text
+       x="-45.102188"
+       y="533.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:bold;text-align:start;text-anchor:start;fill:#800000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Courier New"
+       id="text3405"
+       xml:space="preserve"><tspan
+         x="-45.102188"
+         y="533.39746"
+         id="tspan3407">do/parallel do</tspan></text>
+    <text
+       x="-45.102188"
+       y="552.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3411"
+       xml:space="preserve"><tspan
+         x="-45.102188"
+         y="552.39746"
+         id="tspan3413">and</tspan></text>
+    <text
+       x="-45.102188"
+       y="571.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3415"
+       xml:space="preserve"><tspan
+         x="-45.102188"
+         y="571.39746"
+         id="tspan3417"><tspan
+   style="font-weight:bold;fill:#800000;font-family:Courier New"
+   id="tspan3419">section</tspan> directives</tspan></text>
+    <rect
+       width="158"
+       height="146"
+       x="129.71428"
+       y="432.79077"
+       style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3422" />
+    <text
+       x="140.89781"
+       y="461.39749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3424"
+       xml:space="preserve"><tspan
+         x="140.89781"
+         y="461.39749"
+         id="tspan3426">scopes</tspan></text>
+    <text
+       x="140.89781"
+       y="478.89749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3428"
+       xml:space="preserve"><tspan
+         x="140.89781"
+         y="478.89749"
+         id="tspan3430">variables</tspan></text>
+    <text
+       x="140.89781"
+       y="533.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3432"
+       xml:space="preserve"><tspan
+         x="140.89781"
+         y="533.39746"
+         id="tspan3434"><tspan
+   style="font-weight:bold;fill:#800000;font-family:Courier New"
+   id="tspan3448">shared</tspan> and</tspan></text>
+    <text
+       x="140.89781"
+       y="552.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:bold;text-align:start;text-anchor:start;fill:#800000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Courier New"
+       id="text3436"
+       xml:space="preserve"><tspan
+         x="140.89781"
+         y="552.39746"
+         id="tspan3438">private</tspan></text>
+    <text
+       x="140.89781"
+       y="571.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3440"
+       xml:space="preserve"><tspan
+         x="140.89781"
+         y="571.39746"
+         id="tspan3442">clauses</tspan></text>
+    <rect
+       width="158"
+       height="146"
+       x="312.71429"
+       y="432.79077"
+       style="opacity:1;fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3454" />
+    <text
+       x="323.8978"
+       y="461.39749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3456"
+       xml:space="preserve"><tspan
+         x="323.8978"
+         y="461.39749"
+         id="tspan3458">coordinates thread</tspan></text>
+    <text
+       x="323.8978"
+       y="478.89749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3460"
+       xml:space="preserve"><tspan
+         x="323.8978"
+         y="478.89749"
+         id="tspan3462">execution</tspan></text>
+    <text
+       x="323.8978"
+       y="533.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3464"
+       xml:space="preserve"><tspan
+         x="323.8978"
+         y="533.39746"
+         id="tspan3466"><tspan
+   style="font-weight:bold;fill:#800000;font-family:Courier New"
+   id="tspan3468">critical</tspan> and</tspan></text>
+    <text
+       x="323.8978"
+       y="552.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3470"
+       xml:space="preserve"><tspan
+         x="323.8978"
+         y="552.39746"
+         id="tspan3472"><tspan
+   style="font-weight:bold;fill:#800000;font-family:Courier New"
+   id="tspan3478">atomic</tspan> directives</tspan></text>
+    <text
+       x="323.8978"
+       y="571.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3474"
+       xml:space="preserve"><tspan
+         x="323.8978"
+         y="571.39746"
+         id="tspan3476"><tspan
+   style="font-weight:bold;fill:#800000;font-family:Courier New"
+   id="tspan3484">barrier</tspan> directive</tspan></text>
+    <rect
+       width="217"
+       height="146"
+       x="481.71429"
+       y="432.79077"
+       style="fill:#ffffff;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3490" />
+    <text
+       x="492.8978"
+       y="461.39749"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3492"
+       xml:space="preserve"><tspan
+         x="492.8978"
+         y="461.39749"
+         id="tspan3494">runtime environment</tspan></text>
+    <text
+       x="492.8978"
+       y="533.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3496"
+       xml:space="preserve"><tspan
+         x="492.8978"
+         y="533.39746"
+         id="tspan3498"><tspan
+           style="font-weight:bold;fill:#800000;font-family:Courier New"
+           id="tspan3500">omp_get_thread_num()</tspan></tspan></text>
+    <text
+       x="492.8978"
+       y="552.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:bold;text-align:start;text-anchor:start;fill:#800000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Courier New"
+       id="text3502"
+       xml:space="preserve"><tspan
+         x="492.8978"
+         y="552.39746"
+         id="tspan3504">OMP_NUM_THREADS</tspan></text>
+    <text
+       x="492.8978"
+       y="571.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       id="text3508"
+       xml:space="preserve"><tspan
+         x="492.8978"
+         y="571.39746"
+         id="tspan3510"><tspan
+           style="font-weight:bold;fill:#800000;font-family:Courier New"
+           id="tspan3512">OMP_SCHEDULE</tspan></tspan></text>
+    <text
+       x="492.8978"
+       y="514.39746"
+       style="font-size:16.10752678px;font-style:normal;font-weight:bold;text-align:start;text-anchor:start;fill:#800000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Courier New"
+       id="text3524"
+       xml:space="preserve"><tspan
+         x="492.8978"
+         y="514.39746"
+         id="tspan3526">omp_set_num_threads()</tspan></text>
+    <path
+       d="M -161.28572,311.79075 L -161.28572,269.79075 L 574.71428,269.79075 L 574.71428,311.79075"
+       style="fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3640" />
+    <path
+       d="M 22.714279,311.79075 L 22.714279,269.79075"
+       style="fill:#800000;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3588" />
+    <path
+       d="M 390.71429,269.79075 L 390.71429,311.79075"
+       style="fill:#800000;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3578" />
+    <path
+       d="M 206.71428,269.79075 L 206.71428,311.79075"
+       style="fill:#800000;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3580" />
+    <path
+       d="M 206.71428,227.79075 L 206.71428,269.79075"
+       style="fill:#800000;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#030252;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3598" />
+  </g>
+</svg>

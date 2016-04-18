@@ -1,0 +1,91 @@
+% Note: This file is formatted to be viewed with tabstops set to 4 spaces.
+% vi: ts=4 sw=4
+
+% This file is a component of the umbcposter distribution.
+% The full copyright notice is in the file `umbcposter.cls'.
+%
+% Copyright 2010 Rouben Rostamian  -- http://www.math.umbc.edu/~rouben/
+
+\ProvidesFile{umbcposter-plain.clo}[2010/03/13 UMBC Poster plain style]
+
+% poster header
+\newcommand{\umbcP@makePosterHeader}{
+
+	% establish markers for left and right logos
+	\path (umbcp head.south west) +(0,0.5\headheight)
+		coordinate (umbcp left logo marker);
+
+	\path (umbcp head.south east) +(0,0.5\headheight)
+		coordinate (umbcp right logo marker);
+
+	% put left logo and reestablish its marker
+	\path (umbcp left logo marker)
+		node[right, inner sep=0pt, outer sep=0pt] (umbcp left logo marker)
+				{\umbcP@leftLogo};
+
+	% put right logo and reestablish its marker
+	\path (umbcp right logo marker)
+		node[left, inner sep=0pt, outer sep=0pt] (umbcp right logo marker)
+				{\umbcP@rightLogo};
+
+	% put title
+	\ifthenelse{\equal{\umbcP@titleAlign}{center}}{
+		\path (umbcp left logo marker.east) -- (umbcp right logo marker.west)
+				node[pos=0.5] {\umbcP@title};
+	}{
+		\ifthenelse{\equal{\umbcP@titleAlign}{left}}{
+			\path (umbcp left logo marker.east) +(1em,0)
+				node[inner sep=0pt, outer sep=0pt, right] {\umbcP@title};
+		}{ % right
+			\path (umbcp right logo marker.west) +(-1em,0)
+				node[inner sep=0pt, outer sep=0pt, left] {\umbcP@title};
+		}
+	}
+}
+
+% box header
+% If "box/header style" is not specified, then the header is not filled,
+% therefore it does not cast a shadow.
+\newcommand{\umbcP@makeBoxHeader}{
+	\pgfkeysgetvalue{/tikz/umbcp box header style/.@cmd}\umbcP@theFillStyle
+	\ifx\umbcP@theFillStyle\umbcP@theEmptyStyle
+		\path[umbcp box header style] %[umbcp drop shadow]
+			(umbcp box nw) ++(0,-\umbcP@boxTHeight) [umbcp ul rounding]
+			-- ++(0,\umbcP@boxTHeight) [umbcp ur rounding]
+			-- ++(\umbcP@boxWidth,0)
+			-- +(0,-\umbcP@boxTHeight);
+	\else
+		\path[umbcp box header style] [umbcp drop shadow]
+			(umbcp box nw) ++(0,-\umbcP@boxTHeight) [umbcp ul rounding]
+			-- ++(0,\umbcP@boxTHeight) [umbcp ur rounding]
+			-- ++(\umbcP@boxWidth,0)
+			-- +(0,-\umbcP@boxTHeight);
+	\fi
+}
+
+% box body
+% If "box/body style" is not specified, then the body is not filled,
+% therefore it does not cast a shadow.
+\newcommand{\umbcP@makeBoxBody}{
+	\pgfkeysgetvalue{/tikz/umbcp box body style/.@cmd}\umbcP@theFillStyle
+	\ifx\umbcP@theFillStyle\umbcP@theEmptyStyle
+		\path[umbcp box body style] %[umbcp drop shadow]
+			(umbcp box hd) [umbcp ll rounding]
+			-- (umbcp box hd |- umbcp box se) [umbcp lr rounding]
+			-- (umbcp box se)
+			-- (umbcp box hd -| umbcp box se);
+	\else
+		\path[umbcp box body style] [umbcp drop shadow]
+			(umbcp box hd) [umbcp ll rounding]
+			-- (umbcp box hd |- umbcp box se) [umbcp lr rounding]
+			-- (umbcp box se)
+			-- (umbcp box hd -| umbcp box se);
+	\fi
+}
+
+% Render header first.  The order makes a difference if the
+% drop shadow is turned on.  We want the body to cover up
+% the shadow dropped by the header.
+\newcommand{\umbcP@renderBox}{\umbcP@makeBoxHeader\umbcP@makeBoxBody}
+
+\endinput

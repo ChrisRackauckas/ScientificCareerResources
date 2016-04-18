@@ -1,0 +1,100 @@
+% This example poster is from Scientific Career Resources
+%
+% Author:
+% Chris Rackauckas <contact@chrisrackauckas.com>
+% http://www.chrisrackauckas.com
+
+\documentclass[papersize={48in,36in},dvipsnames,fontmag=.60]{umbcposter}
+
+\usepackage{times}
+\usepackage{url}
+\usepackage{amsmath}
+\definecolor{headerGrey}{RGB}{222,222,224}
+\definecolor{dBlue}{RGB}{2,45,96}
+\definecolor{lBlue}{RGB}{2,66,114}
+
+% Change the font to Computer Modern Sans Serif
+% The default is Times New Roman
+\renewcommand{\rmdefault}{cmss}
+
+\begin{document}
+
+\newcommand{\mytitle}{
+    \tikz \node[
+            fill=white,
+            draw=dBlue,                   % draw box border
+            rounded corners=2ex,
+            opacity=0.75,                % background opacity
+            text opacity=.9,             % text opacity
+            inner sep=0.15\headheight,  % padding around the text
+        ] at (0,0) {
+            \begin{tabular}{c}
+                \Huge
+                    Independent Mean/Variance Regulation in the
+                    Self-Enhanced Degradation Motif \\
+                \huge Chris Rackauckas, Likun Zheng, Julian Sosnik, Tom Schilling, Qing Nie
+            \end{tabular}
+    };    % don't forget the semicolon here!
+}
+
+
+\posterinit{
+	%grid,
+	columns = {3},
+  	background command = {
+     		\path (current page.center) node {
+         		\includegraphics[width=\paperwidth,height=\paperheight]{figures/zebrafish.jpg}};
+   	},
+	title = {\mytitle},
+	left logo = {\includegraphics[height=.33\headheight]{../uciLogos/AyalaLogos/UCI_FJA_SBS_LOGO_HOR_FIN_DNA_RGB_R.jpg}},
+	right logo = {\includegraphics[height=.75\headheight]{../uciLogos/CCBS/CCBS_GlowBallsWBG.pdf}},
+	box/border style= {draw = dBlue, line width = 1pt},
+	box/header style = {top color = dBlue, bottom color = dBlue, middle color = lBlue, fill opacity = .9},
+	box/header font color = {headerGrey},
+	box/header font = {\large\rm},
+	box/body style = {fill = white, fill opacity=.85},
+	head height = {0.15\textheight},
+	box/all rounded
+}
+
+\boxit{col = 0, at top, name=problem}{The Zebrafish Hindbrain}{
+	\input{hindbrain.tex}
+	\vspace{10pt}
+}
+
+\boxit{col = 0, below of = problem, name=box2}{The Interaction Network}{
+	\input{network.tex}
+	\vspace{5.3pt}
+}
+
+\boxit{at top, col = 1, name=box3}{Phenomenological Model}{
+	\input{model.tex}
+}
+
+\boxit{below of = box3, col=1, name=box4}{The Fluctuation-Dissipation Theorem}{
+	\input{fluc.tex}
+}
+
+
+\boxit{below of = box4, col = 1, name=solution}{Solution}{
+	\input{solution.tex}
+}
+
+\boxit{at top,col = 2, name=conclusions}{Conclusions}{
+	\input{conclusions.tex}
+	\vspace{4pt}
+}
+
+\boxit{below of = conclusions,col = 2, name=future}{Future Directions}{
+	\input{future.tex}
+	\vspace{4pt}
+}
+
+\boxit{col=2, below of= future, name = refs}{Acknowledgments}{
+	\vspace{3pt}
+	\input{ack.tex}
+	\vspace{6.3pt}
+}
+
+
+\end{document}

@@ -1,0 +1,2905 @@
+# This example is from Scientific Career Resources
+# This is used to build the example presentation using LyX 2.1
+#
+# Author:
+# Chris Rackauckas <contact@chrisrackauckas.com>
+# http://www.chrisrackauckas.com
+#
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Frankfurt}
+\setbeamertemplate{footline}[frame number]
+
+% One way to customize the footline
+% Adapted from Dr. Rostamian's UMBC themes
+\newcommand{\myfootline}{%
+  \insertshortauthor
+  \hfill
+  \insertshortinstitute
+  \hfill
+  \insertframenumber/\inserttotalframenumber}
+
+\setbeamertemplate{footline}{%
+  \usebeamerfont{structure}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{palette secondary}%
+    \Tiny\hspace*{4mm}\myfootline\hspace{4mm}
+  \end{beamercolorbox}}
+% Finised customizing footline
+
+% Get rid of the navigation symbols
+\setbeamertemplate{navigation symbols}{}
+\end_preamble
+\use_default_options true
+\begin_modules
+listings
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+An Introduction to
+\begin_inset Newline newline
+\end_inset
+
+Parallel Scientific Computing
+\begin_inset Newline newline
+\end_inset
+
+For Mathematicians
+\end_layout
+
+\begin_layout Author
+Chris Rackauckas
+\end_layout
+
+\begin_layout Institute
+University of California, Irvine
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Overview
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Parallel computing has become the main method for solving the most complex
+ computational problems.
+\end_layout
+
+\begin_layout Itemize
+The purpose of this presentation is to introduce:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The types of architectures used for parallel computing
+\end_layout
+
+\begin_layout Itemize
+The main APIs/protocols of parallel computing
+\end_layout
+
+\begin_layout Itemize
+Broad overview of how to utilize this knowledge for scientific computing
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introduction to concurrency in algorithms
+\end_layout
+
+\begin_layout Itemize
+Establish numerical linear algebra as the center of practical parallel scientifi
+c computing
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Outlook
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outlook
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+I will be presenting an overview of parallel computing, the architectures
+ and tools.
+\end_layout
+
+\begin_layout Itemize
+Jiancheng will present an in depth introduction to MPI / BLAS
+\end_layout
+
+\begin_layout Itemize
+Tao will present
+\begin_inset Quotes eld
+\end_inset
+
+practical parallel computing
+\begin_inset Quotes erd
+\end_inset
+
+, how to write parallel scientific computing code.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Why Parallel
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why Parallel Computing?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+The technology that promises to keep Moore’s Law going after 2013 is known
+ as extreme ultraviolet (EUV) lithography.
+ It uses light to write a pattern into a chemical layer on top of a silicon
+ wafer, which is then chemically etched into the silicon to make chip components.
+ EUV lithography uses very high energy ultraviolet light rays that are closer
+ to X-rays than visible light.
+ That’s attractive because EUV light has a short wavelength—around 13 nanometers
+—which allows for making smaller details than the 193-nanometer ultraviolet
+ light used in lithography today.
+ But EUV has proved surprisingly difficult to perfect.
+\end_layout
+
+\begin_layout Quote
+-MIT Technology Review
+\end_layout
+
+\begin_layout Standard
+Answer to the
+\begin_inset Quotes eld
+\end_inset
+
+end of Moore's Law
+\begin_inset Quotes erd
+\end_inset
+
+: Parallel Computing.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Basic Computing Language
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Basic Computing Language
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+An API is an abstract description of how to use a protocol / application.
+ It describes the basic functions that are used to compute in this abstract
+ model.
+ It may also describe function syntax.
+\end_layout
+
+\begin_layout Itemize
+A library is an implementation of an API.
+ It contained complied code, functions, protocols adhering to a specific
+ syntax (and is usually part of a language)
+\end_layout
+
+\begin_layout Itemize
+A toolkit is a set of libraries grouped together for solving a wide range
+ of related problems.
+\end_layout
+
+\begin_layout Itemize
+A framework has
+\begin_inset Quotes eld
+\end_inset
+
+inversion of control
+\begin_inset Quotes erd
+\end_inset
+
+ from a toolkit.
+ The software already does something, and to use you you
+\begin_inset Quotes eld
+\end_inset
+
+insert your behavior
+\begin_inset Quotes erd
+\end_inset
+
+ into various places of the framework.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Language Example
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Example: Numerical Linear Algebra.
+ Let's say you are making a Gaussian Elimination software.
+
+\end_layout
+
+\begin_layout Itemize
+Your
+\begin_inset Quotes eld
+\end_inset
+
+theoretical methods
+\begin_inset Quotes erd
+\end_inset
+
+ written in psudocode are the API.
+ You design it by saying there should be a function that takes in a (lower
+ triangular matrix,vector) pair and spits out the solution to
+\begin_inset Formula $Ax+b$
+\end_inset
+
+, and there should be a function which takes in a matrix
+\begin_inset Formula $A$
+\end_inset
+
+ and spits out a lower triangular matrix
+\begin_inset Formula $A'$
+\end_inset
+
+, etc.
+\end_layout
+
+\begin_layout Itemize
+You implement these functions in MATLAB.
+ This is a library for Gaussian Elimination.
+\end_layout
+
+\begin_layout Itemize
+Your friend Bill then adds your functions to his collection of QR-factorization
+ algorithms, eigenvalue solvers, etc.
+ to make a Numerical Linear Algebra Toolkit for MATLAB.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Parallel Computing Architectures
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parallel Computing Architectures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Parallel code is highly dependent on the chosen architecture
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+These correspond to what portions of the hardware are shared and what portions
+ are physically separated.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Different APIs / Protocols have been developed for different architectures
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+They give commands for controlling and linking each separate entity.
+\end_layout
+
+\begin_layout Itemize
+These are language independent!
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Basic Concurrency Example: Matrix Multiplication
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Basic Concurrency Example: Matrix Multiplication
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename assets/MatrixMul3.png
+	lyxscale 25
+	scale 33
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+How could you implement this?
+\end_layout
+
+\begin_layout Enumerate
+Master sends out rows and columns, gets back answer, puts in place
+\end_layout
+
+\begin_layout Enumerate
+Each node holds a portion of the matrix, they send each other the pieces
+ as needed to update
+\end_layout
+
+\begin_layout Enumerate
+Etc.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Shared Memory Computing
+\end_layout
+
+\begin_layout Subsection
+Introduction to Shared Memory Computing
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Introduction to Shared Memory Computing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/shared_mem.gif
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Most basic parallel computing model.
+\end_layout
+
+\begin_layout Itemize
+Multi-core PCs and Multi-chip HPC nodes follow this model.
+\end_layout
+
+\begin_layout Itemize
+Usually share I/O bus and have a
+\begin_inset Quotes eld
+\end_inset
+
+master
+\begin_inset Quotes erd
+\end_inset
+
+ controller.
+\end_layout
+
+\begin_layout Itemize
+Usually based on some threading idea
+\end_layout
+
+\begin_layout Itemize
+APIs are OpenMP or POSIX Threads.
+\end_layout
+
+\begin_layout Itemize
+Sufficient for most applications
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection
+OpenMP Overview
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+OpenMP Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Idea: Parallel computing via
+\begin_inset Quotes eld
+\end_inset
+
+threads
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/Fork_join.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection
+OpenMP Directives
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+OpenMP Directives
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/OpenMP_language_extensions.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection
+Shared Memory Computing Example: Threads
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shared Memory Computing Example: Threads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Example: Ensemble Model in Machine Learning
+\end_layout
+
+\begin_layout Itemize
+An ensamble model uses many different statistical models and aggregates
+ the results
+\end_layout
+
+\begin_layout Itemize
+Each model takes the dataset and is
+\begin_inset Quotes eld
+\end_inset
+
+independent
+\begin_inset Quotes erd
+\end_inset
+
+ from one another.
+\end_layout
+
+\begin_layout Standard
+Parallelize using threads:
+\end_layout
+
+\begin_layout Enumerate
+Write a function for running each model.
+\end_layout
+
+\begin_layout Enumerate
+Create an array for the processes/threads.
+\end_layout
+
+\begin_layout Enumerate
+Use a loop to call the function on each process.
+\end_layout
+
+\begin_layout Enumerate
+Give a directive to wait for all to finish.
+\end_layout
+
+\end_deeper
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shared Memory Computing Example: Threads
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size tiny
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+subprocesses = []
+\end_layout
+
+\begin_layout Plain Layout
+
+for trial in range(0,trials):
+\end_layout
+
+\begin_layout Plain Layout
+
+for model in modelList:
+\end_layout
+
+\begin_layout Plain Layout
+
+  print("Running Model " + model.tag)
+\end_layout
+
+\begin_layout Plain Layout
+
+  model.run(sproc,subprocesses)
+\end_layout
+
+\begin_layout Plain Layout
+
+for p in subprocesses:
+\end_layout
+
+\begin_layout Plain Layout
+
+  p.wait()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Program: TBEEF Recommendation Algorithm
+\end_layout
+
+\begin_layout Standard
+Purpose: Machine Learning
+\end_layout
+
+\begin_layout Standard
+Language: Python, Multiprocessing Library
+\end_layout
+
+\end_deeper
+\begin_layout FragileFrame
+
+\end_layout
+
+\begin_layout Subsection
+Potential Problems With Design
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Potential Problems With Design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+6cm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename assets/load_bal1.gif
+	scale 33
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename assets/granularity1.gif
+	scale 33
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+5cm
+\end_layout
+
+\begin_layout Standard
+Potential Problems:
+\end_layout
+
+\begin_layout Itemize
+As slow as the slowest process
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Should double up some computationally easier models?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Manage communication vs computation time
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Should send multiple models to the same process at a time?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No
+\begin_inset Quotes eld
+\end_inset
+
+Compile time optimizations
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Shared Memory Example: Parallel Vectorization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shared Memory Computing Example: Parallel Vectorization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Example: Many Random Walks
+\end_layout
+
+\begin_layout Itemize
+Want to create a large matrix where each row is a separate random walk.
+\end_layout
+
+\begin_layout Standard
+Parallelize using threads:
+\end_layout
+
+\begin_layout Enumerate
+Create the matrix.
+\end_layout
+
+\begin_layout Enumerate
+Write the function for the random walk.
+\end_layout
+
+\begin_layout Enumerate
+Call parallel vectorization function.
+\end_layout
+
+\end_deeper
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shared Memory Computing Example: Parallel Vectorization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+
+\size tiny
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+clusterExport(cluster,"rows")
+\end_layout
+
+\begin_layout Plain Layout
+
+walkFunc <- function(p){
+\end_layout
+
+\begin_layout Plain Layout
+
+	n <- 100
+\end_layout
+
+\begin_layout Plain Layout
+
+	walk <- matrix(rbern(n*rows,p),nrow=n, ncol=rows)
+\end_layout
+
+\begin_layout Plain Layout
+
+	walk <- parApply(cluster,walk,c(1,2),walker)
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (i in 2:n){walk[i,] <- walk[i,] + walk[i-1,]}
+\end_layout
+
+\begin_layout Plain Layout
+
+	means <- parApply(cluster,walk,1,mean)
+\end_layout
+
+\begin_layout Plain Layout
+
+	ans <- c()
+\end_layout
+
+\begin_layout Plain Layout
+
+	ans[[1]] <- walk
+\end_layout
+
+\begin_layout Plain Layout
+
+	ans[[2]] <- means
+\end_layout
+
+\begin_layout Plain Layout
+
+	return(ans)}
+\end_layout
+
+\begin_layout Plain Layout
+
+walks <- c()
+\end_layout
+
+\begin_layout Plain Layout
+
+means <- c()
+\end_layout
+
+\begin_layout Plain Layout
+
+for (i in 1:length(ps)){
+\end_layout
+
+\begin_layout Plain Layout
+
+	ans <- walkFunc(ps[i])
+\end_layout
+
+\begin_layout Plain Layout
+
+	walks[[i]] <- ans[[1]]
+\end_layout
+
+\begin_layout Plain Layout
+
+	means[[i]] <- ans[[2]]}
+\end_layout
+
+\end_inset
+
+
+\size default
+Language: R, Snow Library
+\end_layout
+
+\end_deeper
+\begin_layout FragileFrame
+
+\end_layout
+
+\begin_layout Subsection
+Shared Memory Computing Example: Parallel Looping
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shared Memory Computing Example: Parallel Looping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Example: Monte Carlo Simulation of SDEs
+\end_layout
+
+\begin_layout Itemize
+Want to understand how
+\begin_inset Quotes eld
+\end_inset
+
+knocking down a parameter
+\begin_inset Quotes erd
+\end_inset
+
+ changes the mean and variance of the solution for many different parameters
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each parameter I want to run an independent solution.
+\end_layout
+
+\begin_layout Itemize
+All I want to know at the end is what the mean and variance was.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Call a parallel loop.
+\end_layout
+
+\begin_layout Enumerate
+Have the first part of the loop calculate the value.
+\end_layout
+
+\begin_layout Enumerate
+Save those values in a non-temporary (shared) array.
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Shared Memory Example: Parallel Looping
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shared Memory Computing Example: Parallel Looping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+parfor k=1:K
+\end_layout
+
+\begin_layout Plain Layout
+
+    %Make Random Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+    set(stream,'Substream',k);
+\end_layout
+
+\begin_layout Plain Layout
+
+    RA    = simMotif4(vars,crabp,cypmax,N,dt,stream);
+\end_layout
+
+\begin_layout Plain Layout
+
+    mean1 = mean(RA);
+\end_layout
+
+\begin_layout Plain Layout
+
+    var1  = var(RA);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %Next Run: Reset RNG and Knockdown
+\end_layout
+
+\begin_layout Plain Layout
+
+    set(stream,'Substream',k);
+\end_layout
+
+\begin_layout Plain Layout
+
+    crabp = crabp*knock;
+\end_layout
+
+\begin_layout Plain Layout
+
+    RA    = simMotif4(vars,crabp,cypmax,N,dt,stream);
+\end_layout
+
+\begin_layout Plain Layout
+
+    mean2 = mean(RA);
+\end_layout
+
+\begin_layout Plain Layout
+
+    var2  = var(RA);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %Calculate Conclusions
+\end_layout
+
+\begin_layout Plain Layout
+
+    perChangeMean=abs((mean2-mean1)/max(mean1,mean2) *100);
+\end_layout
+
+\begin_layout Plain Layout
+
+    perChangeVar =abs((var2-var1)/max(var1,var2) *100);
+\end_layout
+
+\begin_layout Plain Layout
+
+    DeltaMeans(k)=perChangeMean;
+\end_layout
+
+\begin_layout Plain Layout
+
+    DeltaVars(k) =perChangeVar;
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Language: MATLAB, Parallel Computing Toolbox
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Shared Memory Computing Example: Linear Algebra
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shared Memory Computing Example: Linear Algebra
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+A = rand(40000,40000);
+\end_layout
+
+\begin_layout Plain Layout
+
+B = rand(40000,40000);
+\end_layout
+
+\begin_layout Plain Layout
+
+A*B;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Language: Julia
+\end_layout
+
+\begin_layout Standard
+Linear Algebra is naively parallel in many languages!
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Introduction to BLAS / LINPACK
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Introduction to BLAS / LINPACK
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Basic Linear Algebra Subprograms (BLAS) is a Fortran library first published
+ in 1979.
+\end_layout
+
+\begin_layout Itemize
+Contains functions for dot product, cross product, matrix multiplication.
+\end_layout
+
+\begin_layout Itemize
+Modern implementations include OpenBLAS, Intel MKL, cuBLAS, etc.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Modern implementations are shared memory parallelized via OpenMP and others.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+LINPACK is a Fortran library for numerical linear algebra which uses BLAS.
+\end_layout
+
+\begin_layout Itemize
+Most numerical programming languages use BLAS and LINPACK for matrix algebra,
+ including MATLAB, Mathematica, NumPy, R, Julia, etc.
+\end_layout
+
+\begin_layout Standard
+Never code your own basic functions! These are highly optimized!
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection
+Use of BLAS
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Use of BLAS: dgemv
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DGEMV - perform one of the matrix-vector operations
+\end_layout
+
+\begin_layout Plain Layout
+
+y := alpha*A*x + beta*y, or y := alpha*A'*x + beta*y,
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SUBROUTINE DGEMV ( TRANS, M, N, ALPHA, A, LDA, X, INCX,
+\end_layout
+
+\begin_layout Plain Layout
+
+                 BETA, Y, INCY )
+\end_layout
+
+\begin_layout Plain Layout
+
+DOUBLE       PRECISION ALPHA, BETA
+\end_layout
+
+\begin_layout Plain Layout
+
+INTEGER      INCX, INCY, LDA, M, N
+\end_layout
+
+\begin_layout Plain Layout
+
+CHARACTER*1  TRANS
+\end_layout
+
+\begin_layout Plain Layout
+
+DOUBLE       PRECISION A( LDA, * ), X( * ), Y( * )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MATLAB, Julia, NumPy, etc.
+ all do this so you don't have to!
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Practical Parallel Computing: Language Binding
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Practical Parallel Computing: Language Binding
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The most practical (and most common) solution for parallel computing is
+ then to employ these libraries from within a langauge.
+\end_layout
+
+\begin_layout Itemize
+Interpreted languages are at a severe disadvantage speed-wise because they
+ won't have pre-compiled functions to repeatedly call! Thus in many languages
+ (such as MATLAB) each core will remake the function each time it's called!
+\end_layout
+
+\begin_layout Itemize
+The solution is to
+\begin_inset Quotes eld
+\end_inset
+
+bind
+\begin_inset Quotes erd
+\end_inset
+
+ libraries from other languages.
+ Common solutions are:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MATLAB: MEX (C bindings) and CUDA kernel bindings
+\end_layout
+
+\begin_layout Itemize
+Python: Jython (Java + Python), Cython (C + Python)
+\end_layout
+
+\begin_layout Itemize
+R: Rpp (R + C++)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Common packages to bind:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+PETSc
+\end_layout
+
+\begin_layout Itemize
+BLAS / LAPACK / FFTW
+\end_layout
+
+\begin_layout Itemize
+Your own!
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Language Binding Example: TBEEF
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size tiny
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+subprocesses = []
+\end_layout
+
+\begin_layout Plain Layout
+
+for trial in range(0,trials):
+\end_layout
+
+\begin_layout Plain Layout
+
+for model in modelList:
+\end_layout
+
+\begin_layout Plain Layout
+
+  print("Running Model " + model.tag)
+\end_layout
+
+\begin_layout Plain Layout
+
+  model.run(sproc,subprocesses)
+\end_layout
+
+\begin_layout Plain Layout
+
+for p in subprocesses:
+\end_layout
+
+\begin_layout Plain Layout
+
+  p.wait()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Program: TBEEF Recommendation Algorithm
+\end_layout
+
+\begin_layout Standard
+Purpose: Machine Learning
+\end_layout
+
+\begin_layout Standard
+Language: Python, Multiprocessing Library
+\end_layout
+
+\begin_layout Standard
+The code for running the models is a function in C with OpenMP
+\end_layout
+
+\end_deeper
+\begin_layout FragileFrame
+
+\end_layout
+
+\begin_layout Section
+Distributed Memory Computing
+\end_layout
+
+\begin_layout Subsection
+Introduction to Distributed Memory Computing
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Introduction to Distributed Memory Computing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/distributed_mem.gif
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Commonly referred to as
+\begin_inset Quotes eld
+\end_inset
+
+Cluster Computing
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Each computing node has its own memory, messages must be send between them.
+\end_layout
+
+\begin_layout Itemize
+May share I/O / Disks, may not.
+\end_layout
+
+\begin_layout Itemize
+When many nodes are involved it's known as
+\begin_inset Quotes eld
+\end_inset
+
+Grid Computing
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Distributed Memory APIs
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Distributed Memory APIs / Frameworks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Different programming models work better/worse for different implementations.
+\end_layout
+
+\begin_layout Standard
+There are many different APIs for programming distributed memory systems.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+Because of this, most programming requires the use of libraries built on
+ top of these APIs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The most common for scientific/numerical computing is MPI.
+ It is used in the design of numerical libraries in Fortran and C.
+\end_layout
+
+\begin_layout Itemize
+Hadoop is a framework for a distributed file system (HDFS) and a common
+ processing API known as MapReduce.
+ This framework is designed for large datasets and is commonly used in extremely
+ big data applications like machine learning and in internet servers.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+MPI
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Message Passing Interface (MPI)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MPI is the most common distributed memory API for scientific computing.
+\end_layout
+
+\begin_layout Itemize
+It is implemented in many languages including C, C++, Java, R, Python, etc.
+\end_layout
+
+\begin_layout Itemize
+It has been falling out of fashion in recent years due to being
+\begin_inset Quotes eld
+\end_inset
+
+too close to the metal
+\begin_inset Quotes erd
+\end_inset
+
+ and not allowing many compile-time enhancements.
+\end_layout
+
+\begin_layout Itemize
+Used to build most of the
+\begin_inset Quotes eld
+\end_inset
+
+fundamental libraries
+\begin_inset Quotes erd
+\end_inset
+
+ (ScaLAPACK, P-FFTW, PETSc, etc.)
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+MPI Example
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MPI Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size tiny
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void Ax(double *v, double *u, int l_n, int l_N, int N, ...
+\end_layout
+
+\begin_layout Plain Layout
+
+  int         i,j;
+\end_layout
+
+\begin_layout Plain Layout
+
+  double      temp;
+\end_layout
+
+\begin_layout Plain Layout
+
+  MPI_Request requests[4];
+\end_layout
+
+\begin_layout Plain Layout
+
+  MPI_Status  statuses[4];
+\end_layout
+
+\begin_layout Plain Layout
+
+  //Communications
+\end_layout
+
+\begin_layout Plain Layout
+
+  MPI_Irecv(gl,N,MPI_DOUBLE,idleft,1,MPI_COMM_WORLD,& ...
+\end_layout
+
+\begin_layout Plain Layout
+
+  MPI_Irecv(gr,N,MPI_DOUBLE,idright,2,MPI_COMM_WORLD,&...
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  MPI_Isend(&(u[(N)*(l_N-1)]),N,MPI_DOUBLE,idright,1 ...
+\end_layout
+
+\begin_layout Plain Layout
+
+  MPI_Isend(u,N,MPI_DOUBLE,idleft,2,MPI_COMM_WORLD,&...
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(j=1;j<l_N-1;j++){
+\end_layout
+
+\begin_layout Plain Layout
+
+    for(i=0;i<N;i++){
+\end_layout
+
+\begin_layout Plain Layout
+
+      temp = 4.0*u[i+N*j];
+\end_layout
+
+\begin_layout Plain Layout
+
+      temp -= u[i + N*(j-1)];
+\end_layout
+
+\begin_layout Plain Layout
+
+      	 if(i>0  ){ temp -= u[(i-1)+N* j   ];}
+\end_layout
+
+\begin_layout Plain Layout
+
+      	 if(i<N-1){ temp -= u[(i+1)+N* j   ];}
+\end_layout
+
+\begin_layout Plain Layout
+
+      temp -= u[i + N*(j+1)];
+\end_layout
+
+\begin_layout Plain Layout
+
+     	 v[i+N*j] = temp;}}
+\end_layout
+
+\begin_layout Plain Layout
+
+MPI_Waitall(4,requests,statuses);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Program: TBEEF Recommendation Algorithm
+\end_layout
+
+\begin_layout Standard
+Purpose: Machine Learning
+\end_layout
+
+\begin_layout Standard
+Language: Python, Multiprocessing Library
+\end_layout
+
+\begin_layout Standard
+The code for running the models is a function in C with OpenMP
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+MapReduce
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MapReduce
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+MapReduce is a framework where you
+\begin_inset Quotes eld
+\end_inset
+
+plug in
+\begin_inset Quotes erd
+\end_inset
+
+ two functions:
+\end_layout
+
+\begin_layout Itemize
+A mapping function for doing calculations / processing
+\end_layout
+
+\begin_layout Itemize
+A reducing function for putting outputs together
+\end_layout
+
+\begin_layout Standard
+Used in big data applications where the data cannot fit on any single computer
+ alone (distributed file system)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/MapReduce_Work_Structure.png
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+Hybrid Computing
+\end_layout
+
+\begin_layout Subsection
+Introduction to GPGPU Computing
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Introduction to GPGPU Computing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/cpu_and_gpu_architecture_comparison.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dilemma of GPGPU Computing: Fast shared memory with thousands of cheap dumb
+ cores.
+\end_layout
+
+\begin_layout Itemize
+Each slower than normal CPU cores, but can only execute a small amount of
+ commands.
+\end_layout
+
+\begin_layout Itemize
+Limited memory (Currently the Tesla K80 has 24GB of memory)
+\end_layout
+
+\begin_layout Standard
+GPGPU Computing is the cheap solution for grid computing
+\begin_inset Quotes eld
+\end_inset
+
+mid-sized
+\begin_inset Quotes erd
+\end_inset
+
+ massively parallel problems.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+CUDA vs OpenCL
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CUDA vs OpenCL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CUDA is the most common way of doing GPGPU computing
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+C library written and maintained by Nvidia
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bindings exist to many different languages, so all one has to do is write
+ critical functions in CUDA and link to Python, R, MATLAB, etc.
+\end_layout
+
+\begin_layout Itemize
+MATLAB has native
+\begin_inset Quotes eld
+\end_inset
+
+easy CUDA
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can only be used with Nvidia graphics cards
+\end_layout
+
+\begin_layout Itemize
+Much faster than OpenCL (as of 2015)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+OpenCL is an open API for doing GPGPU computing
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Based off of the OpenGL (Open Graphics Language) API
+\end_layout
+
+\begin_layout Itemize
+Implemented in many different languages
+\end_layout
+
+\begin_layout Itemize
+Works on all graphics cards / chips
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Easy MATLAB CUDA
+\end_layout
+
+\begin_layout FragileFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Easy MATLAB CUDA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size tiny
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+%Setup Initial Value Matrix
+\end_layout
+
+\begin_layout Plain Layout
+
+RAout = zeros(n,m,'gpuArray');
+\end_layout
+
+\begin_layout Plain Layout
+
+RAin  = zeros(n,m,'gpuArray'); ...
+\end_layout
+
+\begin_layout Plain Layout
+
+%Vectorize Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+sigma = sigma*ones(n,m,'gpuArray');
+\end_layout
+
+\begin_layout Plain Layout
+
+alphaGPU=alpha*ones(n,m,'gpuArray'); ...
+\end_layout
+
+\begin_layout Plain Layout
+
+%Automatic CuBLAS Calls (on GPGPU) for Linear Algebra
+\end_layout
+
+\begin_layout Plain Layout
+
+DiffRA  = DiffX*RAout + RAout*DiffY;
+\end_layout
+
+\begin_layout Plain Layout
+
+%Parallel Vectorization Function More Efficient
+\end_layout
+
+\begin_layout Plain Layout
+
+[RAout,RAin,R,RAR,BP,RABP]=arrayfun(@RAReactions,RAout,...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Program: SPDE Solver
+\end_layout
+
+\begin_layout Standard
+Language: MATLAB with Parallel Computing Toolbox
+\end_layout
+
+\end_deeper
+\begin_layout FragileFrame
+
+\end_layout
+
+\begin_layout Subsection
+Pros/Cons of GPGPU Computing
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pros/Cons of GPGPU Computing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Pros
+\end_layout
+
+\begin_layout Itemize
+Cheap massively parallel solution.
+\end_layout
+
+\begin_layout Itemize
+Tons and tons of cores with shared memory.
+\end_layout
+
+\begin_layout Itemize
+Fast memory buses (DDR5).
+\end_layout
+
+\begin_layout Itemize
+Perfect for
+\begin_inset Quotes eld
+\end_inset
+
+Embarrassingly parallel
+\begin_inset Quotes erd
+\end_inset
+
+ applications.
+\end_layout
+
+\begin_layout Itemize
+Rapidly getting better.
+\end_layout
+
+\begin_layout Standard
+Cons
+\end_layout
+
+\begin_layout Itemize
+Slow cores, not faster for
+\begin_inset Quotes eld
+\end_inset
+
+non-super-parallel
+\begin_inset Quotes erd
+\end_inset
+
+ iterated problems.
+\end_layout
+
+\begin_layout Itemize
+Low memory limits applications.
+\end_layout
+
+\begin_layout Itemize
+This architecture is optimized in a very different way from traditional
+ parallel programs, and thus REQUIRES a completely different implementation
+ to get good performance.
+\end_layout
+
+\begin_layout Itemize
+Cheap cards artificially slower for fp64 calculations.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Example CUDA Card
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example CUDA Card
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename assets/TeslaK80.PNG
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Xeon Phi Co-Processors
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Xeon Phi Co-Processors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Cluster on a card
+\begin_inset Quotes erd
+\end_inset
+
+ - chips are low-power Atom chips.
+\end_layout
+
+\begin_layout Itemize
+Designed by Intel for the same purpose as GPGPUs
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Many slow but cheap processors
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Rapidly increasing power
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+New architecture,
+\begin_inset Quotes eld
+\end_inset
+
+Knights Landing
+\begin_inset Quotes erd
+\end_inset
+
+, increases the speed 3x to ~3 Flops (~Tesla K80)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Knights Hill already announced and will be much faster as well!
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Xeon Phi Pros / Cons
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Xeon Phi Pros / Cons
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Pros
+\end_layout
+
+\begin_layout Itemize
+Newest cards as fast as fastest GPGPUs
+\end_layout
+
+\begin_layout Itemize
+Standard x86 architecture, i.e.
+ your code already works for it
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Numerical linear algebra already optimized via Intel MKL (BLAS)
+\end_layout
+
+\begin_layout Itemize
+Uses all the same libraries as CPUs for coding (OpenMP, MPI, etc)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Showing lots of promise
+\end_layout
+
+\begin_layout Standard
+Cons
+\end_layout
+
+\begin_layout Itemize
+Relatively new
+\end_layout
+
+\begin_layout Itemize
+Can be hard to optimize
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Not a problem for numerical code written as linear operations!
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Xeon Phi Card Example
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Xeon Phi Card Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename assets/xeonPhiIntro.PNG
+	scale 62
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Xeon Phi - New Fastest
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Xeon Phi - New Fastest Super Computer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename assets/SoylentPhiSnippet.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Xeon Phi - So Fast It's a Weapon
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Xeon Phi - So Fast It's a Weapon
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/Phi2.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Subsection
+Cloud Computing
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cloud Computing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Cloud computing is non-local parallel computing.
+\end_layout
+
+\begin_layout Standard
+Two distinct types:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Service Cloud Computing
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Using mainframes/servers to do the heavy computing
+\end_layout
+
+\begin_layout Itemize
+Low resource interface interacts with the user
+\end_layout
+
+\begin_layout Itemize
+Architecture is the same as previous mainframes / servers
+\end_layout
+
+\begin_layout Itemize
+This is the model for modern Software as a Service (SaaS)
+\end_layout
+
+\begin_layout Itemize
+Also useful for large scale virtualization platforms (for enterprise)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Major services: Microsoft Azure, Amazon EC2, etc.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Distributed Computing
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Computing using different computers connected over the cloud
+\end_layout
+
+\begin_layout Itemize
+Examples: rendering, bitcoin mining, Monte Carlo simulations
+\end_layout
+
+\begin_layout Itemize
+Problems: Slow interconnects makes it not useful for many HPC applications
+ (though can be useful for large-scale machine learning)
+\end_layout
+
+\begin_layout Itemize
+Often used with MapReduce-type frameworks.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+Future
+\end_layout
+
+\begin_layout Subsection
+Current Trends in Languages
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Current Trends in Languages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename assets/LanguageStats.PNG
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename assets/CB_zR_fUEAAGZOp.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Current Trends in Languages
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Current Trends in Languages/Protocols/Platforms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One large trend is that
+\begin_inset Quotes eld
+\end_inset
+
+computing for everyone
+\begin_inset Quotes erd
+\end_inset
+
+ languages are increasing
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Clusters are
+\begin_inset Quotes eld
+\end_inset
+
+good enough
+\begin_inset Quotes erd
+\end_inset
+
+ so people simply use SAS, Scala, Python, R, etc.
+ to lower development time.
+\end_layout
+
+\begin_layout Itemize
+Language binding is a viable solution for many problems.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Simple Map/Reduce Frameworks like Spark and Hadoop are growing rapidly.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Used in data mining, machine learning, and web applications.
+\end_layout
+
+\begin_layout Itemize
+These are too
+\begin_inset Quotes eld
+\end_inset
+
+lightweight
+\begin_inset Quotes erd
+\end_inset
+
+ and problem-specific to be MPI alternatives.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+MPI is dying?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MPI is mostly for writing libraries for other languages.
+\end_layout
+
+\begin_layout Itemize
+People are looking for more fault-tolerant computing.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+MPI Alternatives
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MPI Alternatives
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The following are MPI alternatives that one should keep an eye on:
+\end_layout
+
+\begin_layout Itemize
+Some people point to Chapel, developed in 2009.
+ However, it has notorious problems with long compile times and does not
+ match the speed of MPI.
+\end_layout
+
+\begin_layout Itemize
+Fortran 2008 has made major improvements and added new libraries, but has
+
+\begin_inset Quotes eld
+\end_inset
+
+legacy
+\begin_inset Quotes erd
+\end_inset
+
+ issues.
+\end_layout
+
+\begin_layout Itemize
+HPX and Charm++ are two that get mentioned, but not much adoption has taken
+ place and there are questions as to its speed.
+\end_layout
+
+\begin_layout Standard
+My take: MPI is here to stay and will still be the king of low-level protocols
+ for a long time.
+ But very few will write at this low of a level (like Assembly).
+ As co-processor use increases, there will also be an increase in the use
+ of Fortran 2008 due to its co-array structures.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Higher-Level Parallel Languages
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Higher-Level Parallel Languages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+With a large number of libraries written in lower level languages that can
+ be bound, many have turned to less efficient but easier to work with higher-lev
+el languages.
+\end_layout
+
+\begin_layout Itemize
+Currently the most common: R, Python, and MapReduce-type frameworks (Hadoop/Spar
+k).
+ Also Stata and SAS for statistics/machine learning.
+ MATLAB is falling out of favor.
+\end_layout
+
+\begin_layout Itemize
+There was an early experiment with concurrency through functional programming
+ (Clojure), but that trend has died down.
+\end_layout
+
+\begin_layout Standard
+However, there is a platform that is continuing to gain steam that is quite
+ useful for numerical computations...
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Julia
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Julia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Julia is a high-level language that was designed for concurrent numerical
+ computing and data analysis
+\end_layout
+
+\begin_layout Itemize
+Its syntax is almost exactly like MATLAB and is interpreted
+\end_layout
+
+\begin_layout Itemize
+Just In Time (JIT) compiler for C-like performance
+\end_layout
+
+\begin_layout Itemize
+Uses common libraries (BLAS, LINPACK, FFTW, PETSc, etc)
+\end_layout
+
+\begin_layout Itemize
+Language bindings for Python, C, R, etc.
+\end_layout
+
+\begin_layout Itemize
+Lisp-like metaprogramming for genetic algorithms
+\end_layout
+
+\begin_layout Itemize
+Interfaces to Intel MKL for Xeon Phi Co-processors
+\end_layout
+
+\begin_layout Itemize
+Less than 3 years old, not even version 1 yet.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename assets/Julia Benchmarks.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

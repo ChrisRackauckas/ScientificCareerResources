@@ -1,0 +1,100 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% This example CV is from Scientific Career Resources
+%
+% Author:
+% Chris Rackauckas <contact@chrisrackauckas.com>
+% http://www.chrisrackauckas.com
+%
+% This template is heavily based off of AwesomeCV, https://github.com/posquit0/Awesome-CV
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, letterpaper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%\colorlet{awesome}{awesome-skyblue}
+% Uncomment if you would like to specify your own color
+\definecolor{awesome}{HTML}{0064a4} % UCI Color
+% Colors for text
+% Uncomment if you would like to have lighter main text
+% \definecolor{darkgray}{gray}{.36}
+% \colorlet{text}{gray}
+ 
+% Fancy text color for online, not for print
+% \definecolor{textonline}{HTML}{405040}
+% \colorlet{text}{textonline}
+
+% Fancy text UCI, not for print
+% \definecolor{textonline}{HTML}{112745}
+% \colorlet{text}{textonline}
+ 
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+\name{Christopher V.}{\color{awesome} Rackauckas}
+\position{Mathematician{\enskip\cdotp\enskip}Theoretical Biologist}
+\address{Your address here}
+
+\mobile{(Put)111-1220} 
+\email{contact@chrisrackauckas.com}
+\homepage{www.chrisrackauckas.com}
+\github{ChrisRackauckas}
+\linkedin{chrisrackauckas}
+\stackoverflow{1544203}{Chris Rackauckas}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \extrainfo{\url{www.stochasticlifestyle.com}}
+
+\quote{Research focus: How do biological organisms control/use noise, and how can scientists/clinicians utilize the information in noise?}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Christopher V. Rackauckas~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+\input{cv/interests.tex}
+\input{cv/education.tex}
+\input{cv/experience.tex}
+\input{cv/extracurricular.tex}
+\input{cv/honors.tex}
+\input{cv/presentation.tex}
+\input{cv/writing.tex}
+\input{cv/skills.tex}
+\input{cv/committees.tex}
+
+
+%-------------------------------------------------------------------------------
+\end{document}

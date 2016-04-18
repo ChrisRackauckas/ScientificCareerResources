@@ -1,0 +1,82 @@
+% Note: This file is formatted to be viewed with tabstops set to 4 spaces.
+% vi: ts=4 sw=4
+
+% This file is a component of the umbcposter distribution.
+% The full copyright notice is in the file `umbcposter.cls'.
+%
+% Copyright 2010 Rouben Rostamian  -- http://www.math.umbc.edu/~rouben/
+
+\ProvidesFile{umbcposter-oval.clo}[2010/03/13 UMBC Poster oval style]
+
+% poster header
+\newcommand{\umbcP@makePosterHeader}{
+
+	% title and logos go inside a node drawn in the style
+	% of a box header
+	\path (umbcp head.south west)
+			+(0.5\textwidth, \headheight/2 + \umbcP@rowGap/2)
+		node[
+			umbcp box header style,
+			rounded corners=0.2\headheight,
+			minimum width = 0.94\textwidth,
+			minimum height = \headheight - \umbcP@rowGap,
+			inner sep = 0pt,
+			outer sep = 0pt,
+		] [umbcp drop shadow] (umbcp oval header) {\umbcP@title};
+
+	% establish markers for left and right logos
+	\path (umbcp oval header.west) +(0.2\headheight,0)
+		coordinate (umbcp left logo marker);
+
+	\path (umbcp oval header.east) +(-0.2\headheight,0)
+		coordinate (umbcp right logo marker);
+
+	% put left logo and reestablish its marker
+	\path (umbcp left logo marker)
+		node[right, inner sep=0pt, outer sep=0pt] (umbcp left logo marker)
+				{\umbcP@leftLogo};
+
+	% put right logo and reestablish its marker
+	\path (umbcp right logo marker)
+		node[left, inner sep=0pt, outer sep=0pt] (umbcp right logo marker)
+				{\umbcP@rightLogo};
+}
+
+% box header
+\setlength{\umbcP@boxTHeight}{6ex}
+\newcommand{\umbcP@makeBoxHeader}{
+
+	\path (umbcp box nw) +(0.5\umbcP@boxWidth, -0.5\umbcP@boxTHeight)
+			node[rounded corners=0.2\umbcP@boxTHeight,
+				text width=\umbcP@boxWidth-4em,
+				minimum height=0.7\umbcP@boxTHeight,
+				inner sep = 0pt,
+				outer sep = 0pt,
+				umbcp box header style,
+				] [umbcp drop shadow] {};
+}
+
+% box body
+\newcommand{\umbcP@makeBoxBody}{
+	\pgfkeysgetvalue{/tikz/umbcp box body style/.@cmd}\umbcP@theBodyStyle
+	\ifx\umbcP@theBodyStyle\umbcP@theEmptyStyle
+		\path[umbcp box body style] %[umbcp drop shadow]
+			(umbcp box nw)
+			[umbcp ur rounding] -- (umbcp box nw -| umbcp box se)
+			[umbcp lr rounding] -- (umbcp box se)
+			[umbcp ll rounding] -- (umbcp box nw |- umbcp box se)
+			[umbcp ul rounding] -- cycle;
+	\else
+		\path[umbcp box body style] [umbcp drop shadow]
+			(umbcp box nw)
+			[umbcp ur rounding] -- (umbcp box nw -| umbcp box se)
+			[umbcp lr rounding] -- (umbcp box se)
+			[umbcp ll rounding] -- (umbcp box nw |- umbcp box se)
+			[umbcp ul rounding] -- cycle;
+	\fi
+}
+
+% Render body first otherwise painting the body fill obscure the header.
+\newcommand{\umbcP@renderBox}{\umbcP@makeBoxBody\umbcP@makeBoxHeader}
+
+\endinput
