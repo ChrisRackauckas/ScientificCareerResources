@@ -1,5 +1,7 @@
 # Scientific Career Resources
 
+[![Join the chat at https://gitter.im/ChrisRackauckas/ScientificCareerResources](https://badges.gitter.im/ChrisRackauckas/ScientificCareerResources.svg)](https://gitter.im/ChrisRackauckas/ScientificCareerResources?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **Scientific Career Resources** is a set of LaTeX templates and logo files for professional development activities. These files are geared towards persons working in scientific fields who have experience with LaTeX. Although the logos and color schemes are geared towards UC Irvine, these files present a wide range of templates for helping individuals present themselves and their work. 
 
 ## Table of Contents
